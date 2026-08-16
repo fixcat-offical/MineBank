@@ -1,0 +1,661 @@
+import { HardwareItem } from '../types';
+
+// 60+ Real Racks / Mining Frames / Server Enclosures across Veddha, MiningCave, ServerCase, Kingwin,
+// GPUVigor, Hydra, Rosewill, Octominer, MiningRigClub, Lian Li, Nanoxia, etc.
+// with slot capacities (4, 6, 7, 8, 10, 12, 14, 16, 19 GPUs), PSU mount count, release years (2016-2026), and prices
+export const RACKS_DATA: HardwareItem[] = [
+  // Iconic 7-GPU & 8-GPU Open Air & Enclosed Racks
+  {
+    id: 'rack-veddha-v3c-6-7gpu',
+    category: 'rack',
+    name: 'Veddha V3C 6-7 GPU Stackable Aluminum Frame',
+    brand: 'Veddha',
+    year: 2018,
+    priceUSD: 89,
+    powerWatts: 0,
+    description: 'Precision laser-cut anodized aluminum frame supporting 6 to 7 GPUs with dual PSU brackets.',
+    specs: { maxGpus: 7, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-veddha-v3c-8gpu',
+    category: 'rack',
+    name: 'Veddha V3C 8 GPU Stackable Deluxe Frame',
+    brand: 'Veddha',
+    year: 2019,
+    priceUSD: 109,
+    powerWatts: 0,
+    description: 'Stackable high-rigidity structure with 5x 120mm fan mounts and dual power supply support.',
+    specs: { maxGpus: 8, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-veddha-minercase-7gpu',
+    category: 'rack',
+    name: 'Veddha 7-GPU Steel Open-Air Frame Pro',
+    brand: 'Veddha',
+    year: 2021,
+    priceUSD: 95,
+    powerWatts: 0,
+    description: 'Optimized 7-GPU spacing with adjustable crossbar for standard & extra-thick triple-slot GPUs.',
+    specs: { maxGpus: 7, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-miningcave-7gpu-titanium',
+    category: 'rack',
+    name: 'MiningCave 7-GPU Aluminum Rig Case Pro',
+    brand: 'MiningCave',
+    year: 2020,
+    priceUSD: 129,
+    powerWatts: 0,
+    description: 'Commercial Canadian aircraft-grade aluminum frame with anti-vibration rubber feet.',
+    specs: { maxGpus: 7, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-miningcave-8gpu-rig',
+    category: 'rack',
+    name: 'MiningCave 8-GPU Heavy Duty Aluminum Frame',
+    brand: 'MiningCave',
+    year: 2021,
+    priceUSD: 145,
+    powerWatts: 0,
+    description: 'Rugged modular construction with dual ATX PSU mounts and 7x 120mm fan brackets.',
+    specs: { maxGpus: 8, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-kingwin-6-8gpu-frame',
+    category: 'rack',
+    name: 'Kingwin 6/8 GPU Mining Rig Case Frame',
+    brand: 'Kingwin',
+    year: 2017,
+    priceUSD: 79,
+    powerWatts: 0,
+    description: 'Open air frame with pre-drilled holes for ATX/MicroATX motherboards and dual PSUs.',
+    specs: { maxGpus: 8, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-kingwin-7gpu-special',
+    category: 'rack',
+    name: 'Kingwin Expert 7-GPU Mining Rack',
+    brand: 'Kingwin',
+    year: 2020,
+    priceUSD: 85,
+    powerWatts: 0,
+    description: '7-slot frame with reinforced PCIe riser guide rails.',
+    specs: { maxGpus: 7, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-gpuvigor-7gpu-open',
+    category: 'rack',
+    name: 'GPUVigor 7-GPU Open Air Stackable Rack',
+    brand: 'GPUVigor',
+    year: 2022,
+    priceUSD: 99,
+    powerWatts: 0,
+    description: 'CNC machined alloy frame with quick-release GPU thumb screws.',
+    specs: { maxGpus: 7, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-gpuvigor-8gpu-pro',
+    category: 'rack',
+    name: 'GPUVigor 8-GPU Pro Miner Frame',
+    brand: 'GPUVigor',
+    year: 2022,
+    priceUSD: 119,
+    powerWatts: 0,
+    description: 'Multi-layer stackable design with support for dual server or ATX power supplies.',
+    specs: { maxGpus: 8, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-hydra-1-8gpu',
+    category: 'rack',
+    name: 'Hydra I 8-GPU Open Air Mining Rig Frame',
+    brand: 'Hydra',
+    year: 2020,
+    priceUSD: 139,
+    powerWatts: 0,
+    description: 'Italian engineered industrial steel frame with dual PSU and 6x 120mm fan brackets.',
+    specs: { maxGpus: 8, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-hydra-7gpu-compact',
+    category: 'rack',
+    name: 'Hydra Compact 7-GPU Frame',
+    brand: 'Hydra',
+    year: 2021,
+    priceUSD: 125,
+    powerWatts: 0,
+    description: 'Optimized 7-slot footprint saving 30% rack floor space.',
+    specs: { maxGpus: 7, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  // Large Multi-GPU Frames (12 - 19 GPUs)
+  {
+    id: 'rack-veddha-v3c-12gpu',
+    category: 'rack',
+    name: 'Veddha V3C 12-GPU Extreme Mining Frame',
+    brand: 'Veddha',
+    year: 2018,
+    priceUSD: 149,
+    powerWatts: 0,
+    description: 'Double layer 12-GPU aluminum frame with quad PSU mounts and 10x fan brackets.',
+    specs: { maxGpus: 12, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-veddha-19gpu-monster',
+    category: 'rack',
+    name: 'Veddha 19-GPU Colossus Mining Rack',
+    brand: 'Veddha',
+    year: 2019,
+    priceUSD: 239,
+    powerWatts: 0,
+    description: 'Engineered specifically for the ASUS B250 Mining Expert with triple power supply shelves.',
+    specs: { maxGpus: 19, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-miningcave-12gpu-beast',
+    category: 'rack',
+    name: 'MiningCave 12-GPU Super Heavy Duty Rig Frame',
+    brand: 'MiningCave',
+    year: 2021,
+    priceUSD: 189,
+    powerWatts: 0,
+    description: 'Dual layer high-rigidity structure with integrated power switches and LED headers.',
+    specs: { maxGpus: 12, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-miningcave-14gpu-ultra',
+    category: 'rack',
+    name: 'MiningCave 14-GPU Ultra Density Frame',
+    brand: 'MiningCave',
+    year: 2022,
+    priceUSD: 219,
+    powerWatts: 0,
+    description: 'Dual-deck 14-GPU frame supporting simultaneous server & ATX power supplies.',
+    specs: { maxGpus: 14, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-miningcave-16gpu-datacenter',
+    category: 'rack',
+    name: 'MiningCave 16-GPU Datacenter Rig Frame',
+    brand: 'MiningCave',
+    year: 2022,
+    priceUSD: 249,
+    powerWatts: 0,
+    description: 'High capacity 16-GPU dual tier rack with quadruple PSU mounting positions.',
+    specs: { maxGpus: 16, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-hydra-ii-12gpu',
+    category: 'rack',
+    name: 'Hydra II 12-GPU Double Decker Rig Frame',
+    brand: 'Hydra',
+    year: 2021,
+    priceUSD: 199,
+    powerWatts: 0,
+    description: 'Two tiers of 6 GPUs each with dedicated 140mm high CFM fan rails.',
+    specs: { maxGpus: 12, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-kingwin-12gpu-stackable',
+    category: 'rack',
+    name: 'Kingwin 12-GPU Dual Layer Rig Frame',
+    brand: 'Kingwin',
+    year: 2018,
+    priceUSD: 139,
+    powerWatts: 0,
+    description: 'Dual level aluminum frame with ample cable management channels.',
+    specs: { maxGpus: 12, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-gpuvigor-12gpu-deluxe',
+    category: 'rack',
+    name: 'GPUVigor 12-GPU Deluxe Stackable Rack',
+    brand: 'GPUVigor',
+    year: 2023,
+    priceUSD: 169,
+    powerWatts: 0,
+    description: 'Reinforced 20x20mm aluminum extrusions with acrylic motherboard isolator.',
+    specs: { maxGpus: 12, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-gpuvigor-16gpu-titan',
+    category: 'rack',
+    name: 'GPUVigor 16-GPU Titan Rig Frame',
+    brand: 'GPUVigor',
+    year: 2023,
+    priceUSD: 229,
+    powerWatts: 0,
+    description: 'Massive double-wide 16-slot frame supporting 4x ATX/Server PSUs.',
+    specs: { maxGpus: 16, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-octominer-x12ultra',
+    category: 'rack',
+    name: 'Octominer X12 Ultra Server Chassis (12 GPUs)',
+    brand: 'Octominer',
+    year: 2022,
+    priceUSD: 899,
+    powerWatts: 120, // Built-in cooling fans & controller
+    description: 'Professional high-pressure server chassis with 3000W redundant power & smart telemetry.',
+    specs: { maxGpus: 12, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-octominer-x8ultra',
+    category: 'rack',
+    name: 'Octominer X8 Ultra High-Flow Server Chassis (8 GPUs)',
+    brand: 'Octominer',
+    year: 2021,
+    priceUSD: 699,
+    powerWatts: 80,
+    description: 'Hot-swap fans, remote IPMI web dashboard, and built-in hardware watchdog.',
+    specs: { maxGpus: 8, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-octominer-x8pro',
+    category: 'rack',
+    name: 'Octominer X8 Pro Enterprise Riserless Case (8 GPUs)',
+    brand: 'Octominer',
+    year: 2020,
+    priceUSD: 549,
+    powerWatts: 70,
+    description: 'Riserless design with 65mm slot spacing and 4x 140mm high CFM delta fans.',
+    specs: { maxGpus: 8, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  // 4U / 5U Server Rackmount Enclosures (6 - 8 GPUs)
+  {
+    id: 'rack-rosewill-rsv-l4000b',
+    category: 'rack',
+    name: 'Rosewill RSV-L4000B 4U Rackmount Mining Case (8 GPUs)',
+    brand: 'Rosewill',
+    year: 2018,
+    priceUSD: 199,
+    powerWatts: 0,
+    description: '19-inch 4U server rackmount chassis with 6x front intake fans and dual PSU support.',
+    specs: { maxGpus: 8, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-rosewill-rsv-l4000c',
+    category: 'rack',
+    name: 'Rosewill RSV-L4000C 4U Mining Chassis (8 GPUs High Airflow)',
+    brand: 'Rosewill',
+    year: 2019,
+    priceUSD: 219,
+    powerWatts: 0,
+    description: 'Reinforced front mesh panel with 7x pre-installed cooling fans and locking front door.',
+    specs: { maxGpus: 8, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-servercase-sc-4650',
+    category: 'rack',
+    name: 'ServerCase SC-4650 4U 8-GPU Mining Chassis',
+    brand: 'ServerCase',
+    year: 2020,
+    priceUSD: 239,
+    powerWatts: 0,
+    description: 'Heavy duty 1.2mm SGCC zinc-coated steel with dual chamber thermal isolation.',
+    specs: { maxGpus: 8, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-servercase-sc-4750-7gpu',
+    category: 'rack',
+    name: 'ServerCase SC-4750 4U 7-GPU Enterprise Case',
+    brand: 'ServerCase',
+    year: 2021,
+    priceUSD: 259,
+    powerWatts: 0,
+    description: '7-slot server case with wide spacing for high-TDP 350W+ graphics cards.',
+    specs: { maxGpus: 7, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-servercase-5u-8gpu',
+    category: 'rack',
+    name: 'ServerCase 5U Heavy Duty 8-GPU Riserless Server',
+    brand: 'ServerCase',
+    year: 2021,
+    priceUSD: 319,
+    powerWatts: 0,
+    description: 'Extra vertical height accommodating 3.5-slot GPUs without riser bending.',
+    specs: { maxGpus: 8, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-nanoxia-mining-rig-case',
+    category: 'rack',
+    name: 'Nanoxia Mining Rig Case 8-GPU Stackable',
+    brand: 'Nanoxia',
+    year: 2018,
+    priceUSD: 179,
+    powerWatts: 0,
+    description: 'German designed black powder coated steel frame with sound-dampening feet.',
+    specs: { maxGpus: 8, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-nanoxia-7gpu-edition',
+    category: 'rack',
+    name: 'Nanoxia Deep Silence 7-GPU Frame',
+    brand: 'Nanoxia',
+    year: 2019,
+    priceUSD: 169,
+    powerWatts: 0,
+    description: '7-GPU layout optimized for low acoustic noise in home/office mining.',
+    specs: { maxGpus: 7, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  // Compact 4 - 6 GPU Starter Frames
+  {
+    id: 'rack-veddha-v3c-6gpu',
+    category: 'rack',
+    name: 'Veddha V3C 6-GPU Standard Frame',
+    brand: 'Veddha',
+    year: 2017,
+    priceUSD: 69,
+    powerWatts: 0,
+    description: 'The classic 6-GPU aluminum mining rack with single/dual PSU mount.',
+    specs: { maxGpus: 6, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-veddha-v3c-4gpu',
+    category: 'rack',
+    name: 'Veddha Mini 4-GPU Desk Mining Frame',
+    brand: 'Veddha',
+    year: 2019,
+    priceUSD: 55,
+    powerWatts: 0,
+    description: 'Compact 4-GPU desktop mining stand with single ATX PSU mount.',
+    specs: { maxGpus: 4, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-miningcave-6gpu-starter',
+    category: 'rack',
+    name: 'MiningCave 6-GPU Starter Aluminum Rig',
+    brand: 'MiningCave',
+    year: 2019,
+    priceUSD: 99,
+    powerWatts: 0,
+    description: 'Easy assemble 6-GPU frame with pre-tapped holes and mounting hardware.',
+    specs: { maxGpus: 6, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-kingwin-6gpu-compact',
+    category: 'rack',
+    name: 'Kingwin 6-GPU Compact Miner Rig Frame',
+    brand: 'Kingwin',
+    year: 2017,
+    priceUSD: 65,
+    powerWatts: 0,
+    description: 'Budget-friendly 6-card aluminum chassis with fan mounting bar.',
+    specs: { maxGpus: 6, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-gpuvigor-6gpu-classic',
+    category: 'rack',
+    name: 'GPUVigor 6-GPU Classic Open Rig',
+    brand: 'GPUVigor',
+    year: 2020,
+    priceUSD: 79,
+    powerWatts: 0,
+    description: 'All-black aluminum frame with rubber non-slip feet.',
+    specs: { maxGpus: 6, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-lianli-t60-mining-bench',
+    category: 'rack',
+    name: 'Lian Li PC-T60 Mining & Test Bench (4-5 GPUs)',
+    brand: 'Lian Li',
+    year: 2016,
+    priceUSD: 119,
+    powerWatts: 0,
+    description: 'Brushed aluminum open bench with multi-card bracket.',
+    specs: { maxGpus: 5, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-streacom-bc1-open-bench',
+    category: 'rack',
+    name: 'Streacom BC1 Open Benchtable V2 (4 GPUs)',
+    brand: 'Streacom',
+    year: 2022,
+    priceUSD: 159,
+    powerWatts: 0,
+    description: 'CNC machined 8mm thick aluminium ultra-portable compute bench.',
+    specs: { maxGpus: 4, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  // High-Density 8 to 10 GPU Mining Server Chassis
+  {
+    id: 'rack-chassis-8gpu-riserless-65mm',
+    category: 'rack',
+    name: 'Industrial 8-GPU 65mm Closed Chassis with 4x 6000RPM Fans',
+    brand: 'MiningChassis',
+    year: 2021,
+    priceUSD: 249,
+    powerWatts: 60,
+    description: 'Enclosed wind-tunnel chassis with push-pull high static pressure cooling.',
+    specs: { maxGpus: 8, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-chassis-7gpu-direct-flow',
+    category: 'rack',
+    name: 'Industrial 7-GPU Direct Wind Tunnel Enclosure',
+    brand: 'MiningChassis',
+    year: 2022,
+    priceUSD: 269,
+    powerWatts: 55,
+    description: '7 wide-spaced GPU channels with front-to-back laminar airflow.',
+    specs: { maxGpus: 7, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-chassis-12gpu-server-enclosed',
+    category: 'rack',
+    name: 'Enterprise 12-GPU 4U Server Enclosure',
+    brand: 'MiningChassis',
+    year: 2022,
+    priceUSD: 399,
+    powerWatts: 90,
+    description: '12-slot server rackmount enclosure with built-in fan speed tachometer and thermal probes.',
+    specs: { maxGpus: 12, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-miningrigclub-8gpu-pro',
+    category: 'rack',
+    name: 'MiningRigClub 8-GPU Steel Stackable Rig',
+    brand: 'MiningRigClub',
+    year: 2021,
+    priceUSD: 115,
+    powerWatts: 0,
+    description: 'Heavy gauge alloy with anti-static acrylic baseboard.',
+    specs: { maxGpus: 8, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-miningrigclub-7gpu-pro',
+    category: 'rack',
+    name: 'MiningRigClub 7-GPU Custom Spacing Frame',
+    brand: 'MiningRigClub',
+    year: 2021,
+    priceUSD: 105,
+    powerWatts: 0,
+    description: 'Engineered for optimal 7-card spacing and temperature reduction.',
+    specs: { maxGpus: 7, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-miningrigclub-12gpu-tower',
+    category: 'rack',
+    name: 'MiningRigClub 12-GPU Double Tower Frame',
+    brand: 'MiningRigClub',
+    year: 2022,
+    priceUSD: 175,
+    powerWatts: 0,
+    description: 'Two-story vertical mining tower reducing footprint by 50%.',
+    specs: { maxGpus: 12, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-miningrigclub-10gpu-frame',
+    category: 'rack',
+    name: 'MiningRigClub 10-GPU Wide Frame',
+    brand: 'MiningRigClub',
+    year: 2020,
+    priceUSD: 135,
+    powerWatts: 0,
+    description: '10-card single row wide aluminum rack with 8 fan mounts.',
+    specs: { maxGpus: 10, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-hydra-iii-8gpu-silent',
+    category: 'rack',
+    name: 'Hydra III Silent Edition 8-GPU Rig Case',
+    brand: 'Hydra',
+    year: 2023,
+    priceUSD: 179,
+    powerWatts: 0,
+    description: 'Vibration absorbing rubber mounts with support for 200mm ultra-silent fans.',
+    specs: { maxGpus: 8, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-hydra-7gpu-titanium',
+    category: 'rack',
+    name: 'Hydra 7-GPU Titanium Edition',
+    brand: 'Hydra',
+    year: 2023,
+    priceUSD: 159,
+    powerWatts: 0,
+    description: 'Matte titanium finish with quick-mount GPU thumb screws.',
+    specs: { maxGpus: 7, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-custom-wood-6gpu-frame',
+    category: 'rack',
+    name: 'EcoPine 6-GPU Non-Conductive Wooden Rig',
+    brand: 'EcoPine',
+    year: 2017,
+    priceUSD: 45,
+    powerWatts: 0,
+    description: 'Classic handcrafted non-conductive pine wood mining frame.',
+    specs: { maxGpus: 6, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-custom-acrylic-8gpu-frame',
+    category: 'rack',
+    name: 'ClearVision 8-GPU Transparent Acrylic Rig',
+    brand: 'ClearVision',
+    year: 2020,
+    priceUSD: 120,
+    powerWatts: 0,
+    description: 'High transparency laser cut 6mm acrylic plates with RGB fan channels.',
+    specs: { maxGpus: 8, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-custom-acrylic-7gpu-frame',
+    category: 'rack',
+    name: 'ClearVision 7-GPU Showpiece Rig Case',
+    brand: 'ClearVision',
+    year: 2021,
+    priceUSD: 110,
+    powerWatts: 0,
+    description: '7-slot display grade acrylic chassis for showcase crypto rigs.',
+    specs: { maxGpus: 7, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-veddha-v3c-plus-8gpu',
+    category: 'rack',
+    name: 'Veddha V3C Plus 8-GPU 2024 Edition',
+    brand: 'Veddha',
+    year: 2024,
+    priceUSD: 119,
+    powerWatts: 0,
+    description: 'Enhanced structural corner braces and dual 12V-2x6 cable guide clips.',
+    specs: { maxGpus: 8, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-veddha-v3c-plus-7gpu',
+    category: 'rack',
+    name: 'Veddha V3C Plus 7-GPU 2024 Edition',
+    brand: 'Veddha',
+    year: 2024,
+    priceUSD: 105,
+    powerWatts: 0,
+    description: 'Extra spacing for RTX 4090/5090 cards with 7 dedicated slots.',
+    specs: { maxGpus: 7, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-miningcave-8gpu-pro-2024',
+    category: 'rack',
+    name: 'MiningCave 8-GPU Pro 2024 Carbon Edition',
+    brand: 'MiningCave',
+    year: 2024,
+    priceUSD: 159,
+    powerWatts: 0,
+    description: 'Hydro-dipped carbon texture aluminum with heavy duty PSU locking clamps.',
+    specs: { maxGpus: 8, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-gpuvigor-8gpu-nextgen',
+    category: 'rack',
+    name: 'GPUVigor 8-GPU NextGen 2025 Frame',
+    brand: 'GPUVigor',
+    year: 2025,
+    priceUSD: 139,
+    powerWatts: 0,
+    description: 'Supports PCIe 5.0 heavy cards with reinforced stainless steel backplate support.',
+    specs: { maxGpus: 8, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-gpuvigor-7gpu-nextgen',
+    category: 'rack',
+    name: 'GPUVigor 7-GPU NextGen 2025 Frame',
+    brand: 'GPUVigor',
+    year: 2025,
+    priceUSD: 125,
+    powerWatts: 0,
+    description: '7-GPU next generation open rig frame with toolless snap-in riser locks.',
+    specs: { maxGpus: 7, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-rosewill-4u-7gpu-server',
+    category: 'rack',
+    name: 'Rosewill 4U 7-GPU Enterprise Server Chassis',
+    brand: 'Rosewill',
+    year: 2020,
+    priceUSD: 209,
+    powerWatts: 0,
+    description: '19-inch rackmount chassis tailored for 7 high-end graphics cards.',
+    specs: { maxGpus: 7, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-octominer-x7lite',
+    category: 'rack',
+    name: 'Octominer X7 Lite Enclosed Case (7 GPUs)',
+    brand: 'Octominer',
+    year: 2021,
+    priceUSD: 499,
+    powerWatts: 50,
+    description: 'Compact 7-GPU server chassis with built-in thermal controller.',
+    specs: { maxGpus: 7, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-servercase-3u-6gpu',
+    category: 'rack',
+    name: 'ServerCase 3U Compact 6-GPU Chassis',
+    brand: 'ServerCase',
+    year: 2019,
+    priceUSD: 189,
+    powerWatts: 0,
+    description: 'Space saving 3U form factor for blower style mining cards.',
+    specs: { maxGpus: 6, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-miningcave-4gpu-micro',
+    category: 'rack',
+    name: 'MiningCave 4-GPU Micro Rig Frame',
+    brand: 'MiningCave',
+    year: 2018,
+    priceUSD: 79,
+    powerWatts: 0,
+    description: 'Small form factor 4-slot frame for quiet residential crypto mining.',
+    specs: { maxGpus: 4, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  },
+  {
+    id: 'rack-kingwin-4gpu-starter',
+    category: 'rack',
+    name: 'Kingwin 4-GPU Starter Frame',
+    brand: 'Kingwin',
+    year: 2017,
+    priceUSD: 49,
+    powerWatts: 0,
+    description: 'Introductory 4-GPU mining rig frame with rubberized feet.',
+    specs: { maxGpus: 4, hashrates: { BTC: 0, ETC: 0, DOGE: 0, HAMSTER: 0, TON: 0 } }
+  }
+];

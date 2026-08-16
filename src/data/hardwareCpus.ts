@@ -1,0 +1,683 @@
+import { HardwareItem } from '../types';
+
+// 60+ Real CPUs from Intel & AMD across generations (2014-2026), with sockets, TDP watts, cores, GHz, and prices
+export const CPUS_DATA: HardwareItem[] = [
+  // Budget Mining Workhorse Intel LGA1151 / LGA1200 / LGA1700
+  {
+    id: 'cpu-intel-celeron-g3900',
+    category: 'cpu',
+    name: 'Intel Celeron G3900 (2.8 GHz, 2 Cores)',
+    brand: 'Intel',
+    year: 2016,
+    priceUSD: 29,
+    powerWatts: 51,
+    description: 'The legendary #1 mining CPU for LGA1151 boards like ASUS B250 Mining Expert.',
+    specs: { socket: 'LGA1151', cores: 2, baseGhz: 2.8, hashrates: { BTC: 0.8, ETC: 0.5, DOGE: 0.4, HAMSTER: 2.0, TON: 0.1 } }
+  },
+  {
+    id: 'cpu-intel-celeron-g3930',
+    category: 'cpu',
+    name: 'Intel Celeron G3930 (2.9 GHz, 2 Cores)',
+    brand: 'Intel',
+    year: 2017,
+    priceUSD: 32,
+    powerWatts: 51,
+    description: 'Ultra-low TDP dual core CPU for B250/Z270 mining motherboards.',
+    specs: { socket: 'LGA1151', cores: 2, baseGhz: 2.9, hashrates: { BTC: 0.9, ETC: 0.6, DOGE: 0.4, HAMSTER: 2.2, TON: 0.1 } }
+  },
+  {
+    id: 'cpu-intel-pentium-g4400',
+    category: 'cpu',
+    name: 'Intel Pentium G4400 (3.3 GHz, 2 Cores)',
+    brand: 'Intel',
+    year: 2015,
+    priceUSD: 35,
+    powerWatts: 54,
+    description: 'Reliable entry CPU with Skylake architecture and integrated HD Graphics 510.',
+    specs: { socket: 'LGA1151', cores: 2, baseGhz: 3.3, hashrates: { BTC: 1.1, ETC: 0.7, DOGE: 0.5, HAMSTER: 2.8, TON: 0.1 } }
+  },
+  {
+    id: 'cpu-intel-pentium-g4560',
+    category: 'cpu',
+    name: 'Intel Pentium G4560 (3.5 GHz, 2C/4T)',
+    brand: 'Intel',
+    year: 2017,
+    priceUSD: 42,
+    powerWatts: 54,
+    description: 'Hyper-threaded Kaby Lake favorite for smooth OS operation with 12+ GPUs attached.',
+    specs: { socket: 'LGA1151', cores: 2, baseGhz: 3.5, hashrates: { BTC: 1.4, ETC: 0.9, DOGE: 0.7, HAMSTER: 3.5, TON: 0.2 } }
+  },
+  {
+    id: 'cpu-intel-celeron-g4900',
+    category: 'cpu',
+    name: 'Intel Celeron G4900 (3.1 GHz, 2 Cores)',
+    brand: 'Intel',
+    year: 2018,
+    priceUSD: 38,
+    powerWatts: 54,
+    description: 'Coffee Lake LGA1151 v2 dual-core processor for B360/Z390 mining boards.',
+    specs: { socket: 'LGA1151-v2', cores: 2, baseGhz: 3.1, hashrates: { BTC: 1.0, ETC: 0.7, DOGE: 0.5, HAMSTER: 2.5, TON: 0.1 } }
+  },
+  {
+    id: 'cpu-intel-celeron-g4930',
+    category: 'cpu',
+    name: 'Intel Celeron G4930 (3.2 GHz, 2 Cores)',
+    brand: 'Intel',
+    year: 2019,
+    priceUSD: 40,
+    powerWatts: 54,
+    description: 'Budget 9th gen processor popular on multi-PCIe mining motherboards.',
+    specs: { socket: 'LGA1151-v2', cores: 2, baseGhz: 3.2, hashrates: { BTC: 1.1, ETC: 0.8, DOGE: 0.6, HAMSTER: 2.8, TON: 0.1 } }
+  },
+  {
+    id: 'cpu-intel-pentium-gold-g5400',
+    category: 'cpu',
+    name: 'Intel Pentium Gold G5400 (3.7 GHz, 2C/4T)',
+    brand: 'Intel',
+    year: 2018,
+    priceUSD: 49,
+    powerWatts: 58,
+    description: 'Reliable 4-thread CPU handling high PCIe lane traffic.',
+    specs: { socket: 'LGA1151-v2', cores: 2, baseGhz: 3.7, hashrates: { BTC: 1.5, ETC: 1.0, DOGE: 0.8, HAMSTER: 4.0, TON: 0.2 } }
+  },
+  {
+    id: 'cpu-intel-celeron-g5900',
+    category: 'cpu',
+    name: 'Intel Celeron G5900 (3.4 GHz, 2 Cores)',
+    brand: 'Intel',
+    year: 2020,
+    priceUSD: 42,
+    powerWatts: 58,
+    description: 'Comet Lake LGA1200 entry CPU for H410/B460 mining rigs.',
+    specs: { socket: 'LGA1200', cores: 2, baseGhz: 3.4, hashrates: { BTC: 1.2, ETC: 0.8, DOGE: 0.6, HAMSTER: 3.0, TON: 0.2 } }
+  },
+  {
+    id: 'cpu-intel-celeron-g5905',
+    category: 'cpu',
+    name: 'Intel Celeron G5905 (3.5 GHz, 2 Cores)',
+    brand: 'Intel',
+    year: 2020,
+    priceUSD: 45,
+    powerWatts: 58,
+    description: 'Upgraded 4MB smart cache dual-core for LGA1200.',
+    specs: { socket: 'LGA1200', cores: 2, baseGhz: 3.5, hashrates: { BTC: 1.3, ETC: 0.9, DOGE: 0.7, HAMSTER: 3.2, TON: 0.2 } }
+  },
+  {
+    id: 'cpu-intel-celeron-g6900',
+    category: 'cpu',
+    name: 'Intel Celeron G6900 (3.4 GHz, 2 Cores)',
+    brand: 'Intel',
+    year: 2022,
+    priceUSD: 52,
+    powerWatts: 46,
+    description: 'Golden Cove microarchitecture LGA1700 processor with PCIe 5.0 support.',
+    specs: { socket: 'LGA1700', cores: 2, baseGhz: 3.4, hashrates: { BTC: 1.8, ETC: 1.2, DOGE: 1.0, HAMSTER: 4.5, TON: 0.3 } }
+  },
+  {
+    id: 'cpu-intel-processor-300',
+    category: 'cpu',
+    name: 'Intel Processor 300 (3.9 GHz, 2C/4T)',
+    brand: 'Intel',
+    year: 2024,
+    priceUSD: 79,
+    powerWatts: 46,
+    description: 'Modern Raptor Lake Refresh dual core with hyperthreading for LGA1700.',
+    specs: { socket: 'LGA1700', cores: 2, baseGhz: 3.9, hashrates: { BTC: 2.2, ETC: 1.5, DOGE: 1.2, HAMSTER: 5.8, TON: 0.4 } }
+  },
+  // Intel Core i3 / i5 Series
+  {
+    id: 'cpu-intel-i3-6100',
+    category: 'cpu',
+    name: 'Intel Core i3-6100 (3.7 GHz, 2C/4T)',
+    brand: 'Intel',
+    year: 2015,
+    priceUSD: 45,
+    powerWatts: 51,
+    description: 'Stable Skylake CPU for 8-12 GPU rigs.',
+    specs: { socket: 'LGA1151', cores: 2, baseGhz: 3.7, hashrates: { BTC: 1.6, ETC: 1.1, DOGE: 0.9, HAMSTER: 4.2, TON: 0.2 } }
+  },
+  {
+    id: 'cpu-intel-i3-7100',
+    category: 'cpu',
+    name: 'Intel Core i3-7100 (3.9 GHz, 2C/4T)',
+    brand: 'Intel',
+    year: 2017,
+    priceUSD: 50,
+    powerWatts: 51,
+    description: 'Kaby Lake processor with high clock speed.',
+    specs: { socket: 'LGA1151', cores: 2, baseGhz: 3.9, hashrates: { BTC: 1.7, ETC: 1.2, DOGE: 1.0, HAMSTER: 4.6, TON: 0.3 } }
+  },
+  {
+    id: 'cpu-intel-i3-8100',
+    category: 'cpu',
+    name: 'Intel Core i3-8100 (3.6 GHz, 4 Cores)',
+    brand: 'Intel',
+    year: 2017,
+    priceUSD: 65,
+    powerWatts: 65,
+    description: 'True quad-core Coffee Lake CPU providing solid PCIe scheduling.',
+    specs: { socket: 'LGA1151-v2', cores: 4, baseGhz: 3.6, hashrates: { BTC: 2.8, ETC: 1.9, DOGE: 1.5, HAMSTER: 7.2, TON: 0.5 } }
+  },
+  {
+    id: 'cpu-intel-i3-9100f',
+    category: 'cpu',
+    name: 'Intel Core i3-9100F (3.6-4.2 GHz, 4 Cores)',
+    brand: 'Intel',
+    year: 2019,
+    priceUSD: 59,
+    powerWatts: 65,
+    description: 'Value favorite with Turbo Boost up to 4.2 GHz.',
+    specs: { socket: 'LGA1151-v2', cores: 4, baseGhz: 3.6, hashrates: { BTC: 3.2, ETC: 2.2, DOGE: 1.8, HAMSTER: 8.5, TON: 0.6 } }
+  },
+  {
+    id: 'cpu-intel-i3-10100',
+    category: 'cpu',
+    name: 'Intel Core i3-10100 (3.6-4.3 GHz, 4C/8T)',
+    brand: 'Intel',
+    year: 2020,
+    priceUSD: 78,
+    powerWatts: 65,
+    description: '8-thread LGA1200 processor with built-in Intel UHD 630.',
+    specs: { socket: 'LGA1200', cores: 4, baseGhz: 3.6, hashrates: { BTC: 4.2, ETC: 2.8, DOGE: 2.3, HAMSTER: 11.0, TON: 0.8 } }
+  },
+  {
+    id: 'cpu-intel-i3-12100',
+    category: 'cpu',
+    name: 'Intel Core i3-12100 (3.3-4.3 GHz, 4C/8T)',
+    brand: 'Intel',
+    year: 2022,
+    priceUSD: 99,
+    powerWatts: 60,
+    description: 'Alder Lake powerhouse delivering strong single-thread performance.',
+    specs: { socket: 'LGA1700', cores: 4, baseGhz: 3.3, hashrates: { BTC: 5.5, ETC: 3.6, DOGE: 3.0, HAMSTER: 14.5, TON: 1.0 } }
+  },
+  {
+    id: 'cpu-intel-i3-14100',
+    category: 'cpu',
+    name: 'Intel Core i3-14100 (3.5-4.7 GHz, 4C/8T)',
+    brand: 'Intel',
+    year: 2024,
+    priceUSD: 125,
+    powerWatts: 60,
+    description: '14th Gen Raptor Lake Refresh with PCIe 5.0 bandwidth.',
+    specs: { socket: 'LGA1700', cores: 4, baseGhz: 3.5, hashrates: { BTC: 6.8, ETC: 4.4, DOGE: 3.7, HAMSTER: 17.5, TON: 1.2 } }
+  },
+  {
+    id: 'cpu-intel-i5-6500',
+    category: 'cpu',
+    name: 'Intel Core i5-6500 (3.2-3.6 GHz, 4 Cores)',
+    brand: 'Intel',
+    year: 2015,
+    priceUSD: 55,
+    powerWatts: 65,
+    description: 'Reliable 4-core CPU for commercial mining rigs.',
+    specs: { socket: 'LGA1151', cores: 4, baseGhz: 3.2, hashrates: { BTC: 3.0, ETC: 2.0, DOGE: 1.6, HAMSTER: 7.8, TON: 0.5 } }
+  },
+  {
+    id: 'cpu-intel-i5-8400',
+    category: 'cpu',
+    name: 'Intel Core i5-8400 (2.8-4.0 GHz, 6 Cores)',
+    brand: 'Intel',
+    year: 2017,
+    priceUSD: 85,
+    powerWatts: 65,
+    description: '6-core Coffee Lake for large multi-GPU rigs running simultaneous node software.',
+    specs: { socket: 'LGA1151-v2', cores: 6, baseGhz: 2.8, hashrates: { BTC: 5.0, ETC: 3.3, DOGE: 2.7, HAMSTER: 13.0, TON: 0.9 } }
+  },
+  {
+    id: 'cpu-intel-i5-10400',
+    category: 'cpu',
+    name: 'Intel Core i5-10400 (2.9-4.3 GHz, 6C/12T)',
+    brand: 'Intel',
+    year: 2020,
+    priceUSD: 115,
+    powerWatts: 65,
+    description: '12-thread workhorse for modern mining operating systems.',
+    specs: { socket: 'LGA1200', cores: 6, baseGhz: 2.9, hashrates: { BTC: 6.5, ETC: 4.2, DOGE: 3.5, HAMSTER: 16.8, TON: 1.1 } }
+  },
+  {
+    id: 'cpu-intel-i5-12400f',
+    category: 'cpu',
+    name: 'Intel Core i5-12400F (2.5-4.4 GHz, 6C/12T)',
+    brand: 'Intel',
+    year: 2022,
+    priceUSD: 139,
+    powerWatts: 65,
+    description: 'Alder Lake 6 performance cores with high instruction throughput.',
+    specs: { socket: 'LGA1700', cores: 6, baseGhz: 2.5, hashrates: { BTC: 8.5, ETC: 5.5, DOGE: 4.6, HAMSTER: 22.0, TON: 1.5 } }
+  },
+  {
+    id: 'cpu-intel-i5-13600k',
+    category: 'cpu',
+    name: 'Intel Core i5-13600K (14C/20T, up to 5.1 GHz)',
+    brand: 'Intel',
+    year: 2022,
+    priceUSD: 279,
+    powerWatts: 125,
+    description: '14-core hybrid architecture with formidable RandomX/CPU mining capability.',
+    specs: { socket: 'LGA1700', cores: 14, baseGhz: 3.5, hashrates: { BTC: 16.5, ETC: 10.5, DOGE: 8.8, HAMSTER: 43.0, TON: 2.9 } }
+  },
+  {
+    id: 'cpu-intel-i5-14600k',
+    category: 'cpu',
+    name: 'Intel Core i5-14600K (14C/20T, up to 5.3 GHz)',
+    brand: 'Intel',
+    year: 2023,
+    priceUSD: 299,
+    powerWatts: 125,
+    description: 'High clock speed Raptor Lake Refresh with strong crypto CPU hash.',
+    specs: { socket: 'LGA1700', cores: 14, baseGhz: 3.5, hashrates: { BTC: 18.0, ETC: 11.5, DOGE: 9.6, HAMSTER: 47.0, TON: 3.1 } }
+  },
+  // Intel High End Core i7 / i9
+  {
+    id: 'cpu-intel-i7-9700k',
+    category: 'cpu',
+    name: 'Intel Core i7-9700K (3.6-4.9 GHz, 8 Cores)',
+    brand: 'Intel',
+    year: 2018,
+    priceUSD: 180,
+    powerWatts: 95,
+    description: '8 high frequency physical cores with solder TIM.',
+    specs: { socket: 'LGA1151-v2', cores: 8, baseGhz: 3.6, hashrates: { BTC: 9.5, ETC: 6.2, DOGE: 5.1, HAMSTER: 25.0, TON: 1.7 } }
+  },
+  {
+    id: 'cpu-intel-i7-12700k',
+    category: 'cpu',
+    name: 'Intel Core i7-12700K (12C/20T, up to 5.0 GHz)',
+    brand: 'Intel',
+    year: 2021,
+    priceUSD: 249,
+    powerWatts: 125,
+    description: '12-core hybrid architecture with 25MB Intel Smart Cache.',
+    specs: { socket: 'LGA1700', cores: 12, baseGhz: 3.6, hashrates: { BTC: 17.5, ETC: 11.2, DOGE: 9.4, HAMSTER: 46.0, TON: 3.0 } }
+  },
+  {
+    id: 'cpu-intel-i7-14700k',
+    category: 'cpu',
+    name: 'Intel Core i7-14700K (20C/28T, up to 5.6 GHz)',
+    brand: 'Intel',
+    year: 2023,
+    priceUSD: 389,
+    powerWatts: 125,
+    description: '20 cores (8P + 12E) delivering outstanding multi-threaded crypto crunching.',
+    specs: { socket: 'LGA1700', cores: 20, baseGhz: 3.4, hashrates: { BTC: 24.0, ETC: 15.5, DOGE: 13.0, HAMSTER: 63.0, TON: 4.1 } }
+  },
+  {
+    id: 'cpu-intel-i9-13900k',
+    category: 'cpu',
+    name: 'Intel Core i9-13900K (24C/32T, up to 5.8 GHz)',
+    brand: 'Intel',
+    year: 2022,
+    priceUSD: 469,
+    powerWatts: 125,
+    description: '24 cores with thermal velocity boost.',
+    specs: { socket: 'LGA1700', cores: 24, baseGhz: 3.0, hashrates: { BTC: 28.5, ETC: 18.2, DOGE: 15.2, HAMSTER: 74.0, TON: 4.8 } }
+  },
+  {
+    id: 'cpu-intel-i9-14900ks',
+    category: 'cpu',
+    name: 'Intel Core i9-14900KS (24C/32T, up to 6.2 GHz)',
+    brand: 'Intel',
+    year: 2024,
+    priceUSD: 649,
+    powerWatts: 150,
+    description: 'World record 6.2 GHz halo CPU with extreme compute density.',
+    specs: { socket: 'LGA1700', cores: 24, baseGhz: 3.2, hashrates: { BTC: 32.0, ETC: 20.5, DOGE: 17.0, HAMSTER: 84.0, TON: 5.5 } }
+  },
+  // Intel Xeon & Enterprise Workstation
+  {
+    id: 'cpu-intel-xeon-e5-2620v3',
+    category: 'cpu',
+    name: 'Intel Xeon E5-2620 v3 (6C/12T, LGA2011-3)',
+    brand: 'Intel',
+    year: 2014,
+    priceUSD: 35,
+    powerWatts: 85,
+    description: 'Affordable server CPU with 40 PCIe lanes for large riserless mining boards.',
+    specs: { socket: 'LGA2011-3', cores: 6, baseGhz: 2.4, hashrates: { BTC: 5.2, ETC: 3.4, DOGE: 2.8, HAMSTER: 13.5, TON: 0.9 } }
+  },
+  {
+    id: 'cpu-intel-xeon-e5-2678v3',
+    category: 'cpu',
+    name: 'Intel Xeon E5-2678 v3 (12C/24T, LGA2011-3)',
+    brand: 'Intel',
+    year: 2015,
+    priceUSD: 65,
+    powerWatts: 120,
+    description: '12-core enterprise workhorse offering 40 PCIe lanes and quad-channel memory.',
+    specs: { socket: 'LGA2011-3', cores: 12, baseGhz: 2.5, hashrates: { BTC: 11.5, ETC: 7.4, DOGE: 6.2, HAMSTER: 30.0, TON: 2.0 } }
+  },
+  {
+    id: 'cpu-intel-xeon-e5-2680v4',
+    category: 'cpu',
+    name: 'Intel Xeon E5-2680 v4 (14C/28T, LGA2011-3)',
+    brand: 'Intel',
+    year: 2016,
+    priceUSD: 85,
+    powerWatts: 120,
+    description: '14-core Broadwell-EP processor with 35MB L3 cache.',
+    specs: { socket: 'LGA2011-3', cores: 14, baseGhz: 2.4, hashrates: { BTC: 14.0, ETC: 9.0, DOGE: 7.5, HAMSTER: 36.5, TON: 2.4 } }
+  },
+  {
+    id: 'cpu-intel-xeon-w-3495x',
+    category: 'cpu',
+    name: 'Intel Xeon w9-3495X (56C/112T, LGA4677)',
+    brand: 'Intel',
+    year: 2023,
+    priceUSD: 5499,
+    powerWatts: 350,
+    description: 'Flagship workstation processor with 112 PCIe 5.0 lanes and 56 cores.',
+    specs: { socket: 'LGA4677', cores: 56, baseGhz: 1.9, hashrates: { BTC: 68.0, ETC: 44.0, DOGE: 36.0, HAMSTER: 175.0, TON: 11.5 } }
+  },
+  // AMD AM4 / AM5 Budget Mining Processors
+  {
+    id: 'cpu-amd-athlon-200ge',
+    category: 'cpu',
+    name: 'AMD Athlon 200GE (3.2 GHz, 2C/4T)',
+    brand: 'AMD',
+    year: 2018,
+    priceUSD: 39,
+    powerWatts: 35,
+    description: 'Ultra-low 35W TDP dual-core for AMD AM4 budget mining rigs with Radeon Vega 3.',
+    specs: { socket: 'AM4', cores: 2, baseGhz: 3.2, hashrates: { BTC: 1.3, ETC: 0.9, DOGE: 0.7, HAMSTER: 3.4, TON: 0.2 } }
+  },
+  {
+    id: 'cpu-amd-athlon-3000g',
+    category: 'cpu',
+    name: 'AMD Athlon 3000G (3.5 GHz, 2C/4T Unlocked)',
+    brand: 'AMD',
+    year: 2019,
+    priceUSD: 45,
+    powerWatts: 35,
+    description: 'Unlocked multiplier 35W CPU favorite for AM4 mining motherboards.',
+    specs: { socket: 'AM4', cores: 2, baseGhz: 3.5, hashrates: { BTC: 1.6, ETC: 1.1, DOGE: 0.9, HAMSTER: 4.2, TON: 0.3 } }
+  },
+  {
+    id: 'cpu-amd-ryzen-3-1200',
+    category: 'cpu',
+    name: 'AMD Ryzen 3 1200 (3.1-3.4 GHz, 4 Cores)',
+    brand: 'AMD',
+    year: 2017,
+    priceUSD: 48,
+    powerWatts: 65,
+    description: 'Zen 1 quad-core processor on AM4 socket.',
+    specs: { socket: 'AM4', cores: 4, baseGhz: 3.1, hashrates: { BTC: 2.5, ETC: 1.7, DOGE: 1.4, HAMSTER: 6.5, TON: 0.4 } }
+  },
+  {
+    id: 'cpu-amd-ryzen-3-3100',
+    category: 'cpu',
+    name: 'AMD Ryzen 3 3100 (3.6-3.9 GHz, 4C/8T)',
+    brand: 'AMD',
+    year: 2020,
+    priceUSD: 69,
+    powerWatts: 65,
+    description: 'Zen 2 7nm 8-thread processor with PCIe 4.0 support.',
+    specs: { socket: 'AM4', cores: 4, baseGhz: 3.6, hashrates: { BTC: 4.5, ETC: 3.0, DOGE: 2.5, HAMSTER: 11.8, TON: 0.8 } }
+  },
+  {
+    id: 'cpu-amd-ryzen-5-1600-af',
+    category: 'cpu',
+    name: 'AMD Ryzen 5 1600 AF (3.2-3.6 GHz, 6C/12T)',
+    brand: 'AMD',
+    year: 2019,
+    priceUSD: 75,
+    powerWatts: 65,
+    description: '12nm Zen+ refreshed 6-core budget hero.',
+    specs: { socket: 'AM4', cores: 6, baseGhz: 3.2, hashrates: { BTC: 6.0, ETC: 4.0, DOGE: 3.3, HAMSTER: 15.6, TON: 1.0 } }
+  },
+  {
+    id: 'cpu-amd-ryzen-5-2600',
+    category: 'cpu',
+    name: 'AMD Ryzen 5 2600 (3.4-3.9 GHz, 6C/12T)',
+    brand: 'AMD',
+    year: 2018,
+    priceUSD: 79,
+    powerWatts: 65,
+    description: 'Popular 6-core processor with 16MB L3 cache.',
+    specs: { socket: 'AM4', cores: 6, baseGhz: 3.4, hashrates: { BTC: 6.5, ETC: 4.3, DOGE: 3.6, HAMSTER: 17.0, TON: 1.1 } }
+  },
+  {
+    id: 'cpu-amd-ryzen-5-3600',
+    category: 'cpu',
+    name: 'AMD Ryzen 5 3600 (3.6-4.2 GHz, 6C/12T)',
+    brand: 'AMD',
+    year: 2019,
+    priceUSD: 95,
+    powerWatts: 65,
+    description: 'Zen 2 32MB GameCache chip famous for RandomX Monero and multi-coin mining.',
+    specs: { socket: 'AM4', cores: 6, baseGhz: 3.6, hashrates: { BTC: 8.8, ETC: 5.8, DOGE: 4.8, HAMSTER: 23.0, TON: 1.5 } }
+  },
+  {
+    id: 'cpu-amd-ryzen-5-5600x',
+    category: 'cpu',
+    name: 'AMD Ryzen 5 5600X (3.7-4.6 GHz, 6C/12T)',
+    brand: 'AMD',
+    year: 2020,
+    priceUSD: 149,
+    powerWatts: 65,
+    description: 'Zen 3 high IPC processor delivering 65W efficiency.',
+    specs: { socket: 'AM4', cores: 6, baseGhz: 3.7, hashrates: { BTC: 11.2, ETC: 7.4, DOGE: 6.1, HAMSTER: 29.5, TON: 1.9 } }
+  },
+  {
+    id: 'cpu-amd-ryzen-5-7600',
+    category: 'cpu',
+    name: 'AMD Ryzen 5 7600 (3.8-5.1 GHz, 6C/12T)',
+    brand: 'AMD',
+    year: 2023,
+    priceUSD: 199,
+    powerWatts: 65,
+    description: 'AM5 socket Zen 4 5nm architecture with integrated RDNA2 graphics.',
+    specs: { socket: 'AM5', cores: 6, baseGhz: 3.8, hashrates: { BTC: 13.5, ETC: 8.9, DOGE: 7.4, HAMSTER: 35.5, TON: 2.3 } }
+  },
+  {
+    id: 'cpu-amd-ryzen-5-9600x',
+    category: 'cpu',
+    name: 'AMD Ryzen 5 9600X (3.9-5.4 GHz, 6C/12T)',
+    brand: 'AMD',
+    year: 2024,
+    priceUSD: 279,
+    powerWatts: 65,
+    description: 'Zen 5 4nm latest architecture delivering incredible single & multi-thread efficiency.',
+    specs: { socket: 'AM5', cores: 6, baseGhz: 3.9, hashrates: { BTC: 16.5, ETC: 10.8, DOGE: 9.0, HAMSTER: 43.0, TON: 2.8 } }
+  },
+  // AMD Ryzen 7 & 9 High Performance
+  {
+    id: 'cpu-amd-ryzen-7-3700x',
+    category: 'cpu',
+    name: 'AMD Ryzen 7 3700X (3.6-4.4 GHz, 8C/16T)',
+    brand: 'AMD',
+    year: 2019,
+    priceUSD: 140,
+    powerWatts: 65,
+    description: '8-core 65W efficiency king with 32MB L3 cache.',
+    specs: { socket: 'AM4', cores: 8, baseGhz: 3.6, hashrates: { BTC: 11.5, ETC: 7.5, DOGE: 6.2, HAMSTER: 30.0, TON: 2.0 } }
+  },
+  {
+    id: 'cpu-amd-ryzen-7-5800x3d',
+    category: 'cpu',
+    name: 'AMD Ryzen 7 5800X3D (8C/16T, 96MB 3D V-Cache)',
+    brand: 'AMD',
+    year: 2022,
+    priceUSD: 289,
+    powerWatts: 105,
+    description: 'Stacked 3D V-Cache giving enormous memory bandwidth to crypto hash calculations.',
+    specs: { socket: 'AM4', cores: 8, baseGhz: 3.4, hashrates: { BTC: 16.0, ETC: 10.4, DOGE: 8.6, HAMSTER: 42.0, TON: 2.7 } }
+  },
+  {
+    id: 'cpu-amd-ryzen-7-7700x',
+    category: 'cpu',
+    name: 'AMD Ryzen 7 7700X (4.5-5.4 GHz, 8C/16T)',
+    brand: 'AMD',
+    year: 2022,
+    priceUSD: 299,
+    powerWatts: 105,
+    description: 'High clock speed 8-core Zen 4 for AM5 platform.',
+    specs: { socket: 'AM5', cores: 8, baseGhz: 4.5, hashrates: { BTC: 18.5, ETC: 12.0, DOGE: 10.0, HAMSTER: 48.5, TON: 3.1 } }
+  },
+  {
+    id: 'cpu-amd-ryzen-7-7800x3d',
+    category: 'cpu',
+    name: 'AMD Ryzen 7 7800X3D (8C/16T, 104MB Cache)',
+    brand: 'AMD',
+    year: 2023,
+    priceUSD: 399,
+    powerWatts: 120,
+    description: 'Top-tier compute chip with massive L3 3D V-Cache.',
+    specs: { socket: 'AM5', cores: 8, baseGhz: 4.2, hashrates: { BTC: 22.0, ETC: 14.2, DOGE: 11.9, HAMSTER: 57.5, TON: 3.8 } }
+  },
+  {
+    id: 'cpu-amd-ryzen-7-9700x',
+    category: 'cpu',
+    name: 'AMD Ryzen 7 9700X (3.8-5.5 GHz, 8C/16T)',
+    brand: 'AMD',
+    year: 2024,
+    priceUSD: 359,
+    powerWatts: 65,
+    description: 'Zen 5 8-core with 65W TDP efficiency and AVX-512 acceleration.',
+    specs: { socket: 'AM5', cores: 8, baseGhz: 3.8, hashrates: { BTC: 24.5, ETC: 16.0, DOGE: 13.3, HAMSTER: 64.0, TON: 4.2 } }
+  },
+  {
+    id: 'cpu-amd-ryzen-9-3900x',
+    category: 'cpu',
+    name: 'AMD Ryzen 9 3900X (12C/24T, 64MB Cache)',
+    brand: 'AMD',
+    year: 2019,
+    priceUSD: 230,
+    powerWatts: 105,
+    description: '12-core dual CCD processor legendary in RandomX mining communities.',
+    specs: { socket: 'AM4', cores: 12, baseGhz: 3.8, hashrates: { BTC: 19.5, ETC: 12.8, DOGE: 10.6, HAMSTER: 51.0, TON: 3.3 } }
+  },
+  {
+    id: 'cpu-amd-ryzen-9-3950x',
+    category: 'cpu',
+    name: 'AMD Ryzen 9 3950X (16C/32T, 64MB Cache)',
+    brand: 'AMD',
+    year: 2019,
+    priceUSD: 310,
+    powerWatts: 105,
+    description: '16 full Zen 2 cores on standard consumer AM4 platform.',
+    specs: { socket: 'AM4', cores: 16, baseGhz: 3.5, hashrates: { BTC: 26.0, ETC: 17.0, DOGE: 14.1, HAMSTER: 68.0, TON: 4.5 } }
+  },
+  {
+    id: 'cpu-amd-ryzen-9-5900x',
+    category: 'cpu',
+    name: 'AMD Ryzen 9 5900X (12C/24T, up to 4.8 GHz)',
+    brand: 'AMD',
+    year: 2020,
+    priceUSD: 279,
+    powerWatts: 105,
+    description: '12 Zen 3 cores with unified L3 cache per CCX.',
+    specs: { socket: 'AM4', cores: 12, baseGhz: 3.7, hashrates: { BTC: 23.5, ETC: 15.2, DOGE: 12.8, HAMSTER: 61.5, TON: 4.0 } }
+  },
+  {
+    id: 'cpu-amd-ryzen-9-5950x',
+    category: 'cpu',
+    name: 'AMD Ryzen 9 5950X (16C/32T, up to 4.9 GHz)',
+    brand: 'AMD',
+    year: 2020,
+    priceUSD: 379,
+    powerWatts: 105,
+    description: 'The definitive AM4 flagship with 16 cores and 32 threads.',
+    specs: { socket: 'AM4', cores: 16, baseGhz: 3.4, hashrates: { BTC: 31.0, ETC: 20.0, DOGE: 16.8, HAMSTER: 81.0, TON: 5.3 } }
+  },
+  {
+    id: 'cpu-amd-ryzen-9-7950x',
+    category: 'cpu',
+    name: 'AMD Ryzen 9 7950X (16C/32T, up to 5.7 GHz)',
+    brand: 'AMD',
+    year: 2022,
+    priceUSD: 529,
+    powerWatts: 170,
+    description: '16 high frequency Zen 4 cores on AM5.',
+    specs: { socket: 'AM5', cores: 16, baseGhz: 4.5, hashrates: { BTC: 38.0, ETC: 24.5, DOGE: 20.5, HAMSTER: 99.0, TON: 6.5 } }
+  },
+  {
+    id: 'cpu-amd-ryzen-9-7950x3d',
+    category: 'cpu',
+    name: 'AMD Ryzen 9 7950X3D (16C/32T, 144MB Cache)',
+    brand: 'AMD',
+    year: 2023,
+    priceUSD: 599,
+    powerWatts: 120,
+    description: '144MB total cache with 3D V-Cache architecture.',
+    specs: { socket: 'AM5', cores: 16, baseGhz: 4.2, hashrates: { BTC: 42.0, ETC: 27.0, DOGE: 22.8, HAMSTER: 110.0, TON: 7.2 } }
+  },
+  {
+    id: 'cpu-amd-ryzen-9-9950x',
+    category: 'cpu',
+    name: 'AMD Ryzen 9 9950X (16C/32T, up to 5.7 GHz)',
+    brand: 'AMD',
+    year: 2024,
+    priceUSD: 649,
+    powerWatts: 170,
+    description: 'Zen 5 16-core flagship with exceptional AVX-512 dual-issue pipeline.',
+    specs: { socket: 'AM5', cores: 16, baseGhz: 4.3, hashrates: { BTC: 48.0, ETC: 31.0, DOGE: 26.0, HAMSTER: 125.0, TON: 8.2 } }
+  },
+  // AMD Threadripper & EPYC
+  {
+    id: 'cpu-amd-threadripper-1950x',
+    category: 'cpu',
+    name: 'AMD Ryzen Threadripper 1950X (16C/32T, TR4)',
+    brand: 'AMD',
+    year: 2017,
+    priceUSD: 290,
+    powerWatts: 180,
+    description: '64 PCIe 3.0 lanes supporting multiple direct x16/x8 GPU configurations.',
+    specs: { socket: 'sTR4', cores: 16, baseGhz: 3.4, hashrates: { BTC: 28.0, ETC: 18.0, DOGE: 15.0, HAMSTER: 73.0, TON: 4.8 } }
+  },
+  {
+    id: 'cpu-amd-threadripper-2990wx',
+    category: 'cpu',
+    name: 'AMD Ryzen Threadripper 2990WX (32C/64T, TR4)',
+    brand: 'AMD',
+    year: 2018,
+    priceUSD: 590,
+    powerWatts: 250,
+    description: '32-core monster with 64MB L3 cache.',
+    specs: { socket: 'sTR4', cores: 32, baseGhz: 3.0, hashrates: { BTC: 45.0, ETC: 29.0, DOGE: 24.5, HAMSTER: 118.0, TON: 7.7 } }
+  },
+  {
+    id: 'cpu-amd-threadripper-3970x',
+    category: 'cpu',
+    name: 'AMD Ryzen Threadripper 3970X (32C/64T, sTRX4)',
+    brand: 'AMD',
+    year: 2019,
+    priceUSD: 990,
+    powerWatts: 280,
+    description: 'Zen 2 32-core with 128MB cache and 64 PCIe 4.0 lanes.',
+    specs: { socket: 'sTRX4', cores: 32, baseGhz: 3.7, hashrates: { BTC: 56.0, ETC: 36.0, DOGE: 30.5, HAMSTER: 146.0, TON: 9.6 } }
+  },
+  {
+    id: 'cpu-amd-threadripper-7980x',
+    category: 'cpu',
+    name: 'AMD Ryzen Threadripper 7980X (64C/128T, sTR5)',
+    brand: 'AMD',
+    year: 2023,
+    priceUSD: 4999,
+    powerWatts: 350,
+    description: '64 Zen 4 cores with 128 PCIe 5.0 lanes for high-density compute clusters.',
+    specs: { socket: 'sTR5', cores: 64, baseGhz: 3.2, hashrates: { BTC: 88.0, ETC: 57.0, DOGE: 48.0, HAMSTER: 230.0, TON: 15.0 } }
+  },
+  {
+    id: 'cpu-amd-epyc-7742',
+    category: 'cpu',
+    name: 'AMD EPYC 7742 (64C/128T, SP3)',
+    brand: 'AMD',
+    year: 2019,
+    priceUSD: 1800,
+    powerWatts: 225,
+    description: 'Rome 64-core server CPU with 128 PCIe 4.0 lanes and 8-channel memory.',
+    specs: { socket: 'SP3', cores: 64, baseGhz: 2.25, hashrates: { BTC: 75.0, ETC: 48.5, DOGE: 41.0, HAMSTER: 196.0, TON: 12.8 } }
+  },
+  {
+    id: 'cpu-amd-epyc-9654',
+    category: 'cpu',
+    name: 'AMD EPYC 9654 (96C/192T, SP5 Genoa)',
+    brand: 'AMD',
+    year: 2022,
+    priceUSD: 8500,
+    powerWatts: 360,
+    description: 'World-class 96-core server processor with 384MB L3 cache and 12-channel DDR5.',
+    specs: { socket: 'SP5', cores: 96, baseGhz: 2.4, hashrates: { BTC: 125.0, ETC: 81.0, DOGE: 68.0, HAMSTER: 325.0, TON: 21.0 } }
+  }
+];
